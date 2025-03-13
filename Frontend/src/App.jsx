@@ -47,7 +47,7 @@ function App() {
 
   async function reviewCode() {
     try {
-      const response = await axios.post('http://localhost:8000/ai/get-review', { code })
+      const response = await axios.post('https://codeoptima-backend.onrender.com/ai/get-review', { code })
       setReview(response.data);
     } catch (error) {
       setReview("❌ Error fetching review. Please try again later.");
