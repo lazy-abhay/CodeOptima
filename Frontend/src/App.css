@@ -1,0 +1,106 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: #1c1d1d;
+  margin-top: 0.3rem;
+  color: #f02f2f;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+main {
+  height: 92%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.5rem;
+}
+
+main .left {
+  background-color: #000000;
+  position: relative;
+}
+
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 1rem;
+  background-color: #0c0c0c;
+}
+
+/* ✅ Moved Editor styles from JSX to CSS */
+.editor {
+  font-family: "Fira Code", "Fira Mono", monospace;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+}
+
+main .left .buttons {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left .review,
+main .left .reset {
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 20rem;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+main .left .reset {
+  background-color: rgb(255, 187, 187);
+}
+
+main .left .review:hover {
+  background-color: rgb(190, 190, 255);
+}
+
+main .left .reset:hover {
+  background-color: rgb(255, 160, 160);
+}
+
+main .right {
+  background-color: #13140e;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  overflow: auto;
+}
