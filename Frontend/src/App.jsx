@@ -6,11 +6,11 @@ import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import axios from "axios";
-import "./App.css"; 
+import "./App.css";
 
 function App() {
-  const defaultCode = 
-  `function sum() {
+  const defaultCode =
+    `function sum() {
   return a + b;
 }`;
 
@@ -47,7 +47,8 @@ function App() {
 
   async function reviewCode() {
     try {
-      const response = await axios.post('https://codeoptima-backend.onrender.com/ai/get-review', { code })
+      console.log("API URL:", import.meta.env.VITE_API_URL);
+      const response = await axios.post(import.meta.env.VITE_API_URL, { code });
       setReview(response.data);
     } catch (error) {
       setReview("❌ Error fetching review. Please try again later.");
@@ -72,7 +73,7 @@ function App() {
               onValueChange={(newCode) => setCode(newCode)}
               highlight={(code) => prism.highlight(code, prism.languages.javascript, "javascript")}
               padding={10}
-              className="editor" 
+              className="editor"
             />
           </div>
           <div className="buttons">
